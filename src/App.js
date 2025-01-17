@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Terminal } from 'lucide-react';
+import { init } from '@emailjs/browser';
 import './styles.css';
+import Contact from './components/Contact';
+import EasterEgg from './components/EasterEgg';
+
+init("MWA3Zz7e2OhZLHHSC");
 
 const NeuralLogo = () => (
   <svg 
@@ -56,23 +62,29 @@ const HummandLanding = () => {
       <header className="fixed w-full bg-black/90 backdrop-blur-sm border-b border-gray-800/50 z-50">
         <div className="container mx-auto">
           <nav className="flex items-center justify-between h-16 px-6">
-            <div className="flex items-center gap-3 float-element">
+            <Link to="/" className="flex items-center gap-3 float-element">
               <NeuralLogo />
               <span className="text-sm text-indigo-800 font-semibold tracking-wider">HUMMAND</span>
-            </div>
+            </Link>
             <div className="flex items-center gap-4">
-              <button className="px-4 py-1.5 text-xs border border-indigo-900 text-indigo-400 hover:bg-indigo-900/20 rounded transition-colors">
+              <Link 
+                to="/contact" 
+                className="px-4 py-1.5 text-xs border border-indigo-900 text-indigo-400 hover:bg-indigo-900/20 rounded transition-colors"
+              >
                 CONTATO
-              </button>
-              <button className="px-4 py-1.5 text-xs bg-indigo-900 text-indigo-100 hover:bg-indigo-800 rounded transition-colors">
+              </Link>
+              <Link 
+                to="/system" 
+                className="px-4 py-1.5 text-xs bg-indigo-900 text-indigo-100 hover:bg-indigo-800 rounded transition-colors"
+              >
                 ACESSAR SISTEMA
-              </button>
+              </Link>
             </div>
           </nav>
         </div>
       </header>
 
-      {/* Main Terminal Interface */}
+      {/* Resto do código da landing page continua igual... */}
       <main className="pt-16 min-h-screen relative">
         <div className={`transition-opacity duration-1000 ${loaded ? 'opacity-100' : 'opacity-0'}`}>
           {/* Terminal Header */}
@@ -190,4 +202,16 @@ const HummandLanding = () => {
   );
 };
 
-export default HummandLanding;
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HummandLanding />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/system" element={<EasterEgg />} />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;

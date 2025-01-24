@@ -84,20 +84,19 @@ const HummandLanding = () => {
         </div>
       </header>
 
-      {/* Resto do código da landing page continua igual... */}
       <main className="pt-16 min-h-screen relative">
         <div className={`transition-opacity duration-1000 ${loaded ? 'opacity-100' : 'opacity-0'}`}>
           {/* Terminal Header */}
-          <div className="p-6 border-b border-gray-800/50">
+          <div className="p-6 border-b border-gray-800/50 text-center">
             <div className="max-w-4xl mx-auto">
-              <div className="flex items-center gap-2 mb-2 text-indigo-400">
+              <div className="flex items-center gap-2 mb-2 text-indigo-400 justify-center">
                 <Terminal className="w-4 h-4" />
                 <span className="text-xs">Terminal Hummand v2.5.0</span>
               </div>
               <div className="command-line">
                 <span className="text-gray-500">$</span>
-                <span className="text-indigo-400"> init</span>
-                <span className="text-gray-400"> projeto-inovacao</span>
+                <span className="text-indigo-400"> hummand init</span>
+                <span className="text-gray-400"> --novo-projeto</span>
               </div>
             </div>
           </div>
@@ -106,14 +105,14 @@ const HummandLanding = () => {
           <div className="p-6">
             <div className="max-w-4xl mx-auto space-y-12">
               {/* Section 1: Welcome */}
-              <div className="space-y-2 float-element">
+              <div className="space-y-2 float-element text-center">
                 <div className="text-xs text-gray-500">&gt; Iniciando ambiente Hummand...</div>
                 <div className="text-3xl font-bold text-indigo-400 my-4">
-                  Simplificando a transformação digital
+                  Humanizando a transformação digital
                 </div>
                 <div className="text-sm text-gray-400 leading-relaxed">
-                  Consultoria especializada em tecnologia, gestão e inovação.
-                  Potencializamos seu negócio com soluções inteligentes e personalizadas.
+                Consultoria em tecnologia, gestão e inovação: potencializamos seu negócio 
+                com soluções de inteligência artificial personalizadas e orientadas por dados.
                 </div>
               </div>
 

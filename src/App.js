@@ -227,7 +227,7 @@ const HummandLanding = () => {
             <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 space-y-4 md:space-y-0">
               <div className="text-center md:text-left">© 2025 Hummand. Site por <a href="https://viniciuslisboa.com.br" className="text-indigo-400 hover:text-indigo-300">Vinícius Lisboa</a></div>
               <div className="flex gap-4">
-                <a href="https://instagram.com/lab.hummand" className="hover:text-indigo-400 transition-colors">Instagram</a>
+                <a href="https://instagram.com/hummand.lab" className="hover:text-indigo-400 transition-colors">Instagram</a>
                 <a href="https://linkedin.com/company/hummand" className="hover:text-indigo-400 transition-colors">LinkedIn</a>
               </div>
             </div>

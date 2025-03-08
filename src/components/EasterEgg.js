@@ -34,6 +34,7 @@ const EasterEgg = () => {
   const accessDeniedMessage = '❌ ACESSO NEGADO: Sistema em manutenção. Entre em contato com o administrador do sistema.';
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setLoaded(true);
     
     // Adiciona background com padrão sutilmente animado
@@ -499,7 +500,7 @@ const EasterEgg = () => {
               
               {/* Endereço */}
               <div className="text-center text-xs text-gray-500 border-t border-gray-800/50 pt-4">
-                <p>R. Josefa Eugenia, S/N - Centro, Paraíba - PB, 58291-000, Brasil</p>
+                <p>R. Josefa Eugenia, S/N - Centro, Curral de Cima - PB, 58291-000, Brasil</p>
               </div>
             </div>
           </footer>

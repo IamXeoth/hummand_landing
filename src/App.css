@@ -1,38 +1,1178 @@
-.App {
-  text-align: center;
+/* Base styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --primary-bg: #0a0a0e;
+  --card-bg: rgba(0, 0, 0, 0.5);
+  --card-border: rgba(239, 68, 68, 0.2);
+  --text-primary: #f0f0f0;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+  --red-primary: #ef4444;
+  --red-dark: #dc2626;
+  --green-status: #10b981;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-primary);
+  background-color: var(--primary-bg);
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+/* Improved Typography for Responsiveness */
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  line-height: 1.3;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+p {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  line-height: 1.6;
+}
+
+/* Container Responsiveness */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 1.5rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+/* Flex & Grid Systems - Mobile First */
+.flex {
   display: flex;
+}
+
+.flex-col {
   flex-direction: column;
+}
+
+.items-center {
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.grid {
+  display: grid;
+}
+
+/* Grid layouts that stack on mobile and expand on larger screens */
+.grid-dashboard {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .grid-dashboard {
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-dashboard {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Better responsive dashboard layout */
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .dashboard-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .dashboard-layout.thirds {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .dashboard-span-2 {
+    grid-column: span 2;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.scale-in {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Enhanced for Mobile - Softer animations for better performance */
+@media (prefers-reduced-motion: reduce) {
+  .scale-in, 
+  .animate-slide-right, 
+  .animate-slide-left, 
+  .animate-slide-up {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Terminal cursor styling */
+.terminal-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 18px;
+  background-color: var(--red-primary);
+  animation: cursor-blink 1.2s infinite;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+@keyframes cursor-blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Status dot animation - optimized */
+.status-dot {
+  position: relative;
+  display: inline-block;
+}
+
+.status-dot::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.4);
+  animation: pulse 2s infinite;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--red-primary);
+}
+
+/* Custom button hover effects - limited for touch devices */
+a, button {
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  a:hover, button:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Text shadows for better readability - only desktop */
+@media (min-width: 768px) {
+  h1, h2, h3, h4 {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Helper classes for bar chart heights */
+.h-35\% { height: 35%; }
+.h-40\% { height: 40%; }
+.h-45\% { height: 45%; }
+.h-50\% { height: 50%; }
+.h-55\% { height: 55%; }
+.h-60\% { height: 60%; }
+.h-65\% { height: 65%; }
+.h-70\% { height: 70%; }
+.h-75\% { height: 75%; }
+.h-80\% { height: 80%; }
+.h-90\% { height: 90%; }
+
+/* Table styles - responsive */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+
+td, th {
+  border: none;
+  padding: 0.5rem 0.75rem;
+}
+
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Responsive tables */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 640px) {
+  .table-responsive {
+    display: block;
+    width: 100%;
+  }
+  
+  .table-mobile-stack th,
+  .table-mobile-stack td {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .table-mobile-stack th {
+    border-bottom: none;
+  }
+  
+  .table-mobile-stack td {
+    border-top: none;
+  }
+}
+
+/* Glass effect for cards - with fallback */
+.glass-card {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@supports (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px)) {
+  .glass-card {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Status indicators */
+.status-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.status-online {
+  background-color: var(--green-status);
+}
+
+.status-offline {
+  background-color: #6b7280;
+}
+
+.status-critical {
+  background-color: var(--red-primary);
+}
+
+.status-warning {
+  background-color: #f59e0b;
+}
+
+/* Chat bubble styles - improved for mobile */
+.chat-bubble {
+  position: relative;
+  max-width: 90%;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-radius: 15px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+@media (min-width: 768px) {
+  .chat-bubble {
+    max-width: 80%;
+  }
+}
+
+.chat-bubble-left {
+  background-color: var(--red-primary);
   color: white;
+  border-bottom-left-radius: 0;
+  align-self: flex-start;
 }
 
-.App-link {
-  color: #61dafb;
+.chat-bubble-right {
+  background-color: #1f2937;
+  color: var(--text-secondary);
+  border-bottom-right-radius: 0;
+  align-self: flex-end;
 }
 
-@keyframes App-logo-spin {
+/* Float animation - disable on mobile for performance */
+@media (min-width: 768px) {
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+}
+
+/* Glow effects - reduced on mobile */
+.glow-text {
+  text-shadow: 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+@media (min-width: 768px) {
+  .glow-text {
+    text-shadow: 0 0 5px rgba(239, 68, 68, 0.3);
+  }
+}
+
+.glow-box {
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.1);
+}
+
+@media (min-width: 768px) {
+  .glow-box {
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.15);
+  }
+}
+
+/* Special badge styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.badge-success {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+.badge-warning {
+  background-color: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+}
+
+.badge-error {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: var(--red-primary);
+}
+
+.badge-info {
+  background-color: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+}
+
+/* Card hover transitions - disable on mobile */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+@media (hover: hover) {
+  .card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-color: rgba(239, 68, 68, 0.3);
+  }
+}
+
+/* Responsive layout for dashboards */
+.dashboard-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .dashboard-card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.dashboard-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dashboard-card-body {
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .dashboard-card-body {
+    padding: 1.5rem;
+  }
+}
+
+/* Responsividade para dispositivos móveis - Enhanced */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem !important;
+    line-height: 1.2;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+    line-height: 1.3;
+  }
+  
+  h3 {
+    font-size: 1.25rem !important;
+  }
+  
+  .dashboard-card {
+    margin-bottom: 1rem;
+  }
+  
+  .status-indicator {
+    width: 6px;
+    height: 6px;
+  }
+  
+  /* Simplified dashboards for mobile */
+  .dashboard-simplified-mobile .dashboard-card-body {
+    padding: 0.75rem;
+  }
+  
+  .dashboard-simplified-mobile .text-sm {
+    font-size: 0.75rem;
+  }
+  
+  /* Stack horizontal elements on mobile */
+  .mobile-stack {
+    flex-direction: column;
+  }
+  
+  .mobile-stack > * {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Small Tablets */
+@media (min-width: 641px) and (max-width: 768px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 2.25rem !important;
+  }
+  
+  h2 {
+    font-size: 1.75rem !important;
+  }
+}
+
+/* Tablets and Small Laptops */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid-dashboard {
+    grid-template-columns: 1fr;
+  }
+  
+  .lg\:col-span-2 {
+    grid-column: span 1 / span 1;
+  }
+  
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Better Spacing for Mobile */
+@media (max-width: 768px) {
+  .section-spacing {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .dashboard-spacing > * + * {
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .section-spacing {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  .dashboard-spacing > * + * {
+    margin-top: 1.5rem;
+  }
+}
+
+/* Melhorias para interfaces touch */
+@media (hover: none) {
+  button, a {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+  
+  .table-row-touch {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  input, select, textarea {
+    font-size: 16px; /* Evita zoom em dispositivos iOS */
+  }
+  
+  /* Touch targets for mobile */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Helper classes para responsividade */
+.hide-on-mobile {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
+.show-on-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .show-on-mobile {
+    display: block !important;
+  }
+}
+
+/* Animações otimizadas para elementos de dashboard */
+@keyframes slideInRight {
   from {
-    transform: rotate(0deg);
+    transform: translateX(20px);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    transform: translateX(0);
+    opacity: 1;
   }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Classes para aplicar as animações - com reduced motion */
+.animate-slide-right {
+  animation: slideInRight 0.5s ease-out forwards;
+}
+
+.animate-slide-left {
+  animation: slideInLeft 0.5s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideInUp 0.5s ease-out forwards;
+}
+
+/* Stagger animations for cards */
+.stagger-item:nth-child(1) { animation-delay: 0.1s; }
+.stagger-item:nth-child(2) { animation-delay: 0.2s; }
+.stagger-item:nth-child(3) { animation-delay: 0.3s; }
+.stagger-item:nth-child(4) { animation-delay: 0.4s; }
+.stagger-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* Efeito de pulse para botões CTA */
+@keyframes pulse-border {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+.pulse-button {
+  animation: pulse-border 2s infinite;
+}
+
+/* Animação de typing para efeito de digitação */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.typing-animation {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end);
+}
+
+/* Destaque de hover aprimorado para cartões */
+.card-hover-enhanced {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+@media (hover: hover) {
+  .card-hover-enhanced:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    border-color: rgba(239, 68, 68, 0.5);
+  }
+}
+
+/* Animação para dashboard card durante carregamento */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.loading-shimmer {
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(to right, #0f0f0f 8%, #1a1a1a 18%, #0f0f0f 33%);
+  background-size: 1000px 100%;
+}
+
+/* Estilos para o terminal do EasterEgg - Mobile Optimized */
+.terminal-container {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+.terminal-header {
+  background-color: #1a1a1a;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+.terminal-content {
+  padding: 12px;
+  height: 50vh;
+  overflow-y: auto;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .terminal-content {
+    padding: 16px;
+    height: 70vh;
+    font-size: 1rem;
+  }
+}
+
+.terminal-input {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.terminal-prompt {
+  color: var(--red-primary);
+  margin-right: 8px;
+  font-weight: 500;
+}
+
+.terminal-input-field {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  outline: none;
+  flex: 1;
+  width: 100%;
+}
+
+/* Formulário de contato - Mobile Optimized */
+.form-control {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 0.375rem;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+  font-size: 16px; /* Prevents zoom on iOS */
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--red-primary);
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.25);
+}
+
+.form-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-select {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 0.375rem;
+  color: var(--text-primary);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ef4444'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+  font-size: 16px; /* Prevents zoom on iOS */
+}
+
+.form-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--red-primary);
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 44px; /* Mobile touch target */
+}
+
+.form-button:hover {
+  background-color: var(--red-dark);
+}
+
+@media (hover: hover) {
+  .form-button:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.form-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.form-button-icon {
+  margin-right: 0.5rem;
+}
+
+/* Form layout for larger screens */
+@media (min-width: 768px) {
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .form-full {
+    grid-column: span 2;
+  }
+}
+
+/* Notificações */
+.notification {
+  padding: 1rem;
+  border-radius: 0.375rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.notification-success {
+  background-color: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.notification-error {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.notification-icon {
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.notification-message {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Loading spinner */
+.loading-spinner {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Flexbox layout utilities */
+.flex-row-mobile-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .flex-row-mobile-column {
+    flex-direction: row;
+  }
+}
+
+/* Improved spacing utilities */
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 0.75rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-6 { margin-top: 1.5rem; }
+.mt-8 { margin-top: 2rem; }
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 0.75rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.mb-8 { margin-bottom: 2rem; }
+
+/* Spacing between dashboard cards */
+.dashboard-card + .dashboard-card {
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .dashboard-card + .dashboard-card {
+    margin-top: 1.5rem;
+  }
+}
+
+/* Improved focus styles for accessibility */
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+  outline: 2px solid rgba(239, 68, 68, 0.4);
+  outline-offset: 2px;
+}
+
+/* Keyboard navigation focus styles */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--red-primary);
+  outline-offset: 2px;
+}
+
+/* Skip navigation for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--red-primary);
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Responsive layout support for the side-by-side dashboards */
+.side-by-side-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .side-by-side-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* For maintaining proper card heights on side-by-side dashboards */
+.card-equal-height {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-equal-height .dashboard-card-body {
+  flex: 1;
+}
+
+/* Mobile menu improvements */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 1.5rem 2rem;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem;
+}
+
+/* Safe area insets for notched phones */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .fixed-header {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+/* Print styles for dashboards */
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  .dashboard-card {
+    break-inside: avoid;
+    border: 1px solid #ddd;
+    box-shadow: none;
+    margin-bottom: 1rem;
+  }
+  
+  .dashboard-card-header {
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+/* Specific support for the latest Hummand layout */
+.hummand-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .hummand-hero {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  
+  .hummand-hero-content {
+    flex: 1;
+  }
+  
+  .hummand-hero-dashboards {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Improved styles for the side-by-side Suporte and Sistema IA dashboards */
+.dashboard-bottom-row {
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .dashboard-bottom-row {
+    margin-top: 2rem;
+  }
+}
+
+/* Properly support dark mode */
+@media (prefers-color-scheme: dark) {
+  /* Already dark theme, so no changes needed */
+  /* This is just a placeholder for future light mode support */
 }

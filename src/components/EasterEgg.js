@@ -179,13 +179,13 @@ const EasterEgg = () => {
     
     if (inputStage === 'email') {
       // Adiciona o email digitado ao histórico do terminal
-      setTypedText(prev => prev + 'E-mail $ ' + userInput + '\n\n');
+      setTypedText(prev => prev + '$ E-mail: ' + userInput + '\n\n');
       // Avança para o estágio de senha
       setInputStage('password');
       setUserInput('');
     } else {
       // Adiciona asteriscos para a senha ao histórico do terminal
-      setTypedText(prev => prev + 'Senha $ ' + '*'.repeat(passwordInput.length) + '\n\n');
+      setTypedText(prev => prev + '$ Senha: ' + '*'.repeat(passwordInput.length) + '\n\n');
       
       // Easter egg: se o usuário tentar qualquer login
       setTimeout(() => {
@@ -286,8 +286,19 @@ const EasterEgg = () => {
               </Link>
             </div>
             
-            {/* Botão Acessar Sistema à direita - Destacado como ativo */}
-            <div className="hidden md:block">
+            {/* Botões à direita */}
+            <div className="hidden md:flex items-center gap-3">
+              {/* Botão Voltar */}
+              <Link 
+                to="/" 
+                className="px-4 py-2 border border-white/20 text-white hover:bg-white/10 rounded-md transition-all duration-300 flex items-center gap-2"
+                title="Voltar à página inicial"
+              >
+                <ArrowLeft size={16} />
+                <span>Voltar</span>
+              </Link>
+              
+              {/* Botão Acessar Sistema à direita - Destacado como ativo */}
               <Link 
                 to="/system" 
                 className="px-6 py-2.5 bg-red-600 text-white hover:bg-red-500 rounded-md transition-all duration-300 shadow-lg hover:shadow-red-500/20 flex items-center gap-2 transform hover:-translate-y-0.5 border-2 border-red-500/50"
@@ -317,6 +328,15 @@ const EasterEgg = () => {
           >
             <div className="bg-black/95 border-t border-red-900/20 px-4 py-2">
               <div className="flex flex-col space-y-3 py-3">
+                {/* Botão Voltar no menu mobile */}
+                <Link 
+                  to="/" 
+                  className="px-4 py-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-md transition-colors flex items-center gap-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <ArrowLeft size={16} />
+                  Voltar para Home
+                </Link>
                 <Link 
                   to="/about" 
                   className="px-4 py-3 text-gray-300 hover:text-white hover:bg-red-900/10 rounded-md transition-colors"
@@ -353,11 +373,11 @@ const EasterEgg = () => {
 
       <main className="pt-20 min-h-screen relative">
         <div className={`transition-opacity duration-1000 ${loaded ? 'opacity-100' : 'opacity-0'}`}>
-          <section className="py-16 px-4">
+          <section className="py-12 px-4">
             <div className="max-w-4xl mx-auto">
-              <div className="bg-black/70 backdrop-blur-sm border border-red-900/20 rounded-xl overflow-hidden shadow-2xl">
+              <div className="bg-black/70 backdrop-blur-sm border border-red-900/20 rounded-xl overflow-hidden shadow-xl">
                 {/* Terminal Header */}
-                <div className="flex items-center justify-between px-4 py-3 border-b border-red-900/20 bg-black/80">
+                <div className="flex items-center justify-between px-4 py-2 border-b border-red-900/20 bg-black/80">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full bg-red-500"></div>
                     <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
@@ -394,7 +414,7 @@ const EasterEgg = () => {
                 </div>
                 
                 {/* Terminal Footer */}
-                <div className="px-4 py-3 border-t border-red-900/20 bg-black/80 flex justify-between items-center">
+                <div className="px-4 py-2 border-t border-red-900/20 bg-black/80 flex justify-between items-center">
                   <div className="text-xs text-gray-500">Sistema em manutenção</div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-red-500 rounded-full"></div>
@@ -404,13 +424,13 @@ const EasterEgg = () => {
               </div>
               
               {/* Informação adicional - Ajustado para não ser cortado */}
-              <div className="mt-8 text-center mb-32">
+              <div className="mt-6 text-center mb-6">
                 <p className="text-gray-400 mb-4">
                   O sistema administrativo da Hummand está temporariamente indisponível.
                 </p>
                 <Link 
                   to="/contact" 
-                  className="inline-flex items-center gap-2 px-6 py-2 bg-red-600 text-white hover:bg-red-500 rounded-md transition-all"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-red-600 text-white hover:bg-red-500 rounded-md transition-all"
                 >
                   <span>Entrar em Contato</span>
                   <ArrowRight size={16} />
@@ -420,9 +440,9 @@ const EasterEgg = () => {
           </section>
           
           {/* Footer */}
-          <footer className="py-8 px-4 bg-black border-t border-red-900/20 w-full">
+          <footer className="py-6 px-4 bg-black border-t border-red-900/20 w-full">
             <div className="max-w-6xl mx-auto">
-              <div className="flex flex-col md:flex-row justify-between items-center text-sm mb-4">
+              <div className="flex flex-col md:flex-row justify-between items-center text-sm mb-3">
                 <div className="text-gray-500">© 2025 Hummand.</div>
                 
                 <div className="flex gap-8 my-4 md:my-0">

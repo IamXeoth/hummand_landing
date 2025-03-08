@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, X, Menu, ArrowLeft, Send, Mail, Phone, MapPin, Clock, CheckCircle, AlertCircle, Loader } from 'lucide-react';
+import { ArrowRight, X, Menu, ArrowLeft, Send, Mail, Phone, MapPin, Clock, CheckCircle, AlertCircle, Loader, Home } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
@@ -223,8 +223,19 @@ const Contact = () => {
               </Link>
             </div>
             
-            {/* Botão Acessar Sistema à direita */}
-            <div className="hidden md:block">
+            {/* Botões à direita - Adicionado botão Voltar */}
+            <div className="hidden md:flex items-center gap-3">
+              {/* Botão Voltar */}
+              <Link 
+                to="/" 
+                className="px-4 py-2 border border-white/20 text-white hover:bg-white/10 rounded-md transition-all duration-300 flex items-center gap-2"
+                title="Voltar à página inicial"
+              >
+                <ArrowLeft size={16} />
+                <span>Voltar</span>
+              </Link>
+              
+              {/* Botão Acessar Sistema */}
               <Link 
                 to="/system" 
                 className="px-6 py-2.5 bg-red-600 text-white hover:bg-red-500 rounded-md transition-all duration-300 shadow-lg hover:shadow-red-500/20 flex items-center gap-2 transform hover:-translate-y-0.5"
@@ -254,6 +265,15 @@ const Contact = () => {
           >
             <div className="bg-black/95 border-t border-red-900/20 px-4 py-2">
               <div className="flex flex-col space-y-3 py-3">
+                {/* Botão Voltar no menu mobile */}
+                <Link 
+                  to="/" 
+                  className="px-4 py-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-md transition-colors flex items-center gap-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <ArrowLeft size={16} />
+                  Voltar para Home
+                </Link>
                 <Link 
                   to="/about" 
                   className="px-4 py-3 text-gray-300 hover:text-white hover:bg-red-900/10 rounded-md transition-colors"
@@ -290,10 +310,10 @@ const Contact = () => {
 
       <main className="pt-20 min-h-screen relative">
         <div className={`transition-opacity duration-1000 ${loaded ? 'opacity-100' : 'opacity-0'}`}>
-          <section className="py-16 md:py-24 px-4">
+          <section className="py-12 px-4">
             <div className="max-w-6xl mx-auto">
               {/* Heading */}
-              <div className="text-center mb-12">
+              <div className="text-center mb-8">
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 scale-in">Entre em Contato</h1>
                 <p className="text-lg text-gray-400 max-w-2xl mx-auto">
                   Interessado em nossas soluções para transformação digital da sua prefeitura? 
@@ -301,19 +321,19 @@ const Contact = () => {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
                 {/* Formulário de Contato */}
                 <div className="lg:col-span-8 bg-black/50 backdrop-blur-sm border border-red-900/20 rounded-xl overflow-hidden shadow-xl">
-                  <div className="p-6 md:p-8">
+                  <div className="p-4 md:p-6">
                     {formStatus.submitted ? (
-                      <div className={`p-6 flex flex-col items-center justify-center text-center h-full min-h-64 ${formStatus.error ? 'text-red-500' : 'text-emerald-500'}`}>
+                      <div className={`p-4 flex flex-col items-center justify-center text-center h-full min-h-64 ${formStatus.error ? 'text-red-500' : 'text-emerald-500'}`}>
                         {formStatus.error ? (
-                          <AlertCircle size={48} className="mb-4" />
+                          <AlertCircle size={48} className="mb-3" />
                         ) : (
-                          <CheckCircle size={48} className="mb-4" />
+                          <CheckCircle size={48} className="mb-3" />
                         )}
                         <h3 className="text-xl font-bold mb-2">{formStatus.error ? 'Erro no Envio' : 'Mensagem Enviada!'}</h3>
-                        <p className="text-gray-300 mb-6">{formStatus.message}</p>
+                        <p className="text-gray-300 mb-4">{formStatus.message}</p>
                         <button 
                           onClick={() => setFormStatus({...formStatus, submitted: false})}
                           className="px-5 py-2 bg-red-600 text-white hover:bg-red-500 rounded-md transition-colors"
@@ -323,12 +343,12 @@ const Contact = () => {
                       </div>
                     ) : (
                       <>
-                        <h2 className="text-xl font-bold text-white mb-6 flex items-center">
+                        <h2 className="text-xl font-bold text-white mb-4 flex items-center">
                           <Mail className="mr-2 text-red-500" size={20} />
                           Formulário de Contato
                         </h2>
                         
-                        <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
+                        <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
                           {/* Dados Básicos */}
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
@@ -464,13 +484,13 @@ const Contact = () => {
                 </div>
                 
                 {/* Informações de Contato e Suporte */}
-                <div className="lg:col-span-4 space-y-6">
+                <div className="lg:col-span-4 space-y-4">
                   {/* Card de Informações de Contato */}
                   <div className="bg-black/50 backdrop-blur-sm border border-red-900/20 rounded-xl overflow-hidden shadow-xl">
-                    <div className="p-6">
-                      <h2 className="text-xl font-bold text-white mb-6">Informações de Contato</h2>
+                    <div className="p-4">
+                      <h2 className="text-xl font-bold text-white mb-4">Informações de Contato</h2>
                       
-                      <div className="space-y-4">
+                      <div className="space-y-3">
                         <div className="flex items-start">
                           <Mail className="text-red-500 mt-1 mr-3" size={18} />
                           <div>
@@ -518,8 +538,8 @@ const Contact = () => {
                   
                   {/* Card de Suporte 24/7 */}
                   <div className="bg-black/50 backdrop-blur-sm border border-red-900/20 rounded-xl overflow-hidden shadow-xl">
-                    <div className="p-6">
-                      <div className="flex justify-between items-center mb-4">
+                    <div className="p-4">
+                      <div className="flex justify-between items-center mb-3">
                         <h3 className="text-lg font-semibold text-white">Suporte 24/7</h3>
                         <span className="flex items-center gap-1 text-xs px-2 py-1 bg-emerald-900/30 text-emerald-400 rounded-full">
                           <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
@@ -527,7 +547,7 @@ const Contact = () => {
                         </span>
                       </div>
                       
-                      <div className="p-3 bg-black/40 rounded-lg border border-red-900/10 mb-4">
+                      <div className="p-3 bg-black/40 rounded-lg border border-red-900/10 mb-3">
                         <div className="text-sm text-gray-300">
                           <p className="mb-2">Nossa equipe está pronta para ajudar sua prefeitura:</p>
                           <ul className="space-y-1.5 pl-5 list-disc">
@@ -558,9 +578,9 @@ const Contact = () => {
           </section>
           
           {/* Footer */}
-          <footer className="py-8 px-4 bg-black border-t border-red-900/20">
+          <footer className="py-6 px-4 bg-black border-t border-red-900/20">
             <div className="max-w-6xl mx-auto">
-              <div className="flex flex-col md:flex-row justify-between items-center text-sm mb-4">
+              <div className="flex flex-col md:flex-row justify-between items-center text-sm mb-3">
                 <div className="text-gray-500">© 2025 Hummand.</div>
                 
                 <div className="flex gap-8 my-4 md:my-0">

@@ -5,6 +5,8 @@ import { init } from '@emailjs/browser';
 import './styles.css';
 import Contact from './components/Contact';
 import EasterEgg from './components/EasterEgg';
+import AboutUs from './components/AboutUs';
+import Services from './components/Services';
 
 init("MWA3Zz7e2OhZLHHSC");
 
@@ -232,23 +234,23 @@ const HummandLanding = () => {
         <div className={`transition-opacity duration-1000 ${loaded ? 'opacity-100' : 'opacity-0'}`}>
 
           {/* Hero Section */}
-<section className="py-20 px-4 relative">
+<section className="py-12 px-4 relative">
   <div className="max-w-6xl mx-auto">
-    <div className="flex flex-col lg:flex-row gap-8 items-start">
+    <div className="flex flex-col lg:flex-row gap-6 items-start">
       {/* Left Side - Slogan */}
-      <div className="lg:w-1/2 lg:pt-0"> {/* Aumentei padding-top */}
-        <div className="inline-block px-3 py-1 mb-6 bg-red-900/20 border border-red-500/20 rounded-full text-red-400 text-sm">
+      <div className="lg:w-1/2 lg:pt-0">
+        <div className="inline-block px-3 py-1 mb-4 bg-red-900/20 border border-red-500/20 rounded-full text-red-400 text-sm">
           <span className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 bg-red-500 rounded-full"></span>
             <span>Bem-vindo a Hummand!</span>
           </span>
         </div>
         
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
           Humanizando a <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500">transformação digital</span> da sua prefeitura
         </h1>
         
-        <p className="text-lg text-gray-400 mb-10 max-w-lg">
+        <p className="text-lg text-gray-400 mb-6 max-w-lg">
           Automatizamos tarefas burocráticas, liberando seus servidores para atividades mais estratégicas, criativas e de alto valor para o cidadão.
         </p>
         
@@ -262,11 +264,11 @@ const HummandLanding = () => {
       </div>
       
       {/* Right Side - Dashboards */}
-      <div className="lg:w-1/2 space-y-6">
+      <div className="lg:w-1/2 space-y-4">
         {/* Dashboard 1: Estado dos Serviços */}
         <div className="bg-black/50 backdrop-blur-sm border border-red-900/20 rounded-xl overflow-hidden shadow-xl">
-          <div className="p-5">
-            <div className="flex justify-between items-center mb-4">
+          <div className="p-4">
+            <div className="flex justify-between items-center mb-3">
               <h3 className="text-lg font-semibold text-white">Status dos Serviços</h3>
               <span className="text-xs px-2 py-1 bg-emerald-900/30 text-emerald-400 rounded-full">Online</span>
             </div>
@@ -295,12 +297,12 @@ const HummandLanding = () => {
 
         {/* Dashboard 2: Consultoria */}
         <div className="bg-black/50 backdrop-blur-sm border border-red-900/20 rounded-xl overflow-hidden shadow-xl">
-          <div className="p-5">
-            <div className="flex justify-between items-center mb-4">
+          <div className="p-4">
+            <div className="flex justify-between items-center mb-3">
               <h3 className="text-lg font-semibold text-white">Consultoria Especializada</h3>
               <span className="text-xs px-2 py-1 bg-emerald-900/30 text-emerald-400 rounded-full">Ativo</span>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-3">
               <div className="p-3 border border-red-900/10 rounded-lg bg-black/30">
                 <div className="flex flex-col">
                   <div className="flex items-center justify-between mb-2">
@@ -332,11 +334,11 @@ const HummandLanding = () => {
     </div>
     
     {/* Espaçamento uniforme entre os cards */}
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6 mb-6"> {/* Ajustado margin-top para 6 */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-4 mb-0">
       {/* Dashboard: Suporte (à esquerda do Sistema IA) */}
       <div className="bg-black/50 backdrop-blur-sm border border-red-900/20 rounded-xl overflow-hidden shadow-xl">
-        <div className="p-5">
-          <div className="flex justify-between items-center mb-4">
+        <div className="p-4">
+          <div className="flex justify-between items-center mb-3">
             <h3 className="text-lg font-semibold text-white">Suporte 24/7</h3>
             <span className="text-xs px-2 py-1 bg-emerald-900/30 text-emerald-400 rounded-full">Monitorando</span>
           </div>
@@ -372,13 +374,13 @@ const HummandLanding = () => {
       
       {/* Dashboard: Sistema IA (à direita do Suporte) */}
       <div className="bg-black/50 backdrop-blur-sm border border-red-900/20 rounded-xl overflow-hidden shadow-xl">
-        <div className="p-5">
-          <div className="flex justify-between items-center mb-4">
+        <div className="p-4">
+          <div className="flex justify-between items-center mb-3">
             <h3 className="text-lg font-semibold text-white">Sistema de IA</h3>
             <span className="text-xs px-2 py-1 bg-emerald-900/30 text-emerald-400 rounded-full">Processando</span>
           </div>
           
-          <div className="space-y-4">
+          <div className="space-y-3">
             {/* Primeiro indicador: Análise Preditiva - Arrecadação */}
             <div className="p-3 border border-red-900/10 rounded-lg bg-black/30">
               <div className="flex items-center justify-between mb-2">
@@ -436,19 +438,19 @@ const HummandLanding = () => {
 </section>
 
           {/* Métricas Section - Redesenhado com 3 colunas */}
-<section className="py-16 px-4 bg-black/40 backdrop-blur-sm border-y border-red-900/20">
+<section className="py-12 px-4 bg-black/40 backdrop-blur-sm border-y border-red-900/20">
   <div className="max-w-6xl mx-auto">
-    <div className="text-center mb-12">
+    <div className="text-center mb-8">
       <h2 className="text-3xl font-bold text-white mb-3">Métricas de Excelência</h2>
       <p className="text-lg text-gray-400 max-w-2xl mx-auto">
         Resultados comprovados que demonstram o impacto de nossas soluções na gestão pública.
       </p>
     </div>
     
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {/* Consultoria & Gestão */}
-      <div className="bg-black/30 border border-red-900/20 rounded-lg p-6 shadow-xl">
-        <div className="flex justify-between items-center mb-6">
+      <div className="bg-black/30 border border-red-900/20 rounded-lg p-4 shadow-xl">
+        <div className="flex justify-between items-center mb-4">
           <h3 className="text-xl font-semibold text-white">Consultoria &amp; Gestão</h3>
           <div className="p-2 bg-red-900/30 rounded-lg">
             <BarChart2 size={20} className="text-red-400" />
@@ -456,19 +458,19 @@ const HummandLanding = () => {
         </div>
         
         <div className="grid grid-cols-2 gap-4">
-          <div className="text-center p-4 bg-black/20 rounded-lg border border-red-900/10">
+          <div className="text-center p-3 bg-black/20 rounded-lg border border-red-900/10">
             <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500 mb-1">150+</div>
             <div className="text-sm text-gray-400">Projetos Ativos</div>
           </div>
-          <div className="text-center p-4 bg-black/20 rounded-lg border border-red-900/10">
+          <div className="text-center p-3 bg-black/20 rounded-lg border border-red-900/10">
             <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500 mb-1">98%</div>
             <div className="text-sm text-gray-400">Satisfação Clientes</div>
           </div>
-          <div className="text-center p-4 bg-black/20 rounded-lg border border-red-900/10">
+          <div className="text-center p-3 bg-black/20 rounded-lg border border-red-900/10">
             <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500 mb-1">45%</div>
             <div className="text-sm text-gray-400">Ganho Produtividade</div>
           </div>
-          <div className="text-center p-4 bg-black/20 rounded-lg border border-red-900/10">
+          <div className="text-center p-3 bg-black/20 rounded-lg border border-red-900/10">
             <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500 mb-1">30%</div>
             <div className="text-sm text-gray-400">Economia Média</div>
           </div>
@@ -476,8 +478,8 @@ const HummandLanding = () => {
       </div>
       
       {/* Análise de Dados */}
-      <div className="bg-black/30 border border-red-900/20 rounded-lg p-6 shadow-xl">
-        <div className="flex justify-between items-center mb-6">
+      <div className="bg-black/30 border border-red-900/20 rounded-lg p-4 shadow-xl">
+        <div className="flex justify-between items-center mb-4">
           <h3 className="text-xl font-semibold text-white">Análise de Dados</h3>
           <div className="p-2 bg-red-900/30 rounded-lg">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-red-400">
@@ -487,19 +489,19 @@ const HummandLanding = () => {
         </div>
         
         <div className="grid grid-cols-2 gap-4">
-          <div className="text-center p-4 bg-black/20 rounded-lg border border-red-900/10">
+          <div className="text-center p-3 bg-black/20 rounded-lg border border-red-900/10">
             <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500 mb-1">5TB</div>
             <div className="text-sm text-gray-400">Processamento Diário</div>
           </div>
-          <div className="text-center p-4 bg-black/20 rounded-lg border border-red-900/10">
+          <div className="text-center p-3 bg-black/20 rounded-lg border border-red-900/10">
             <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500 mb-1">15+</div>
             <div className="text-sm text-gray-400">Modelos IA</div>
           </div>
-          <div className="text-center p-4 bg-black/20 rounded-lg border border-red-900/10">
+          <div className="text-center p-3 bg-black/20 rounded-lg border border-red-900/10">
             <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500 mb-1">95.5%</div>
             <div className="text-sm text-gray-400">Taxa Precisão</div>
           </div>
-          <div className="text-center p-4 bg-black/20 rounded-lg border border-red-900/10">
+          <div className="text-center p-3 bg-black/20 rounded-lg border border-red-900/10">
             <div className="flex items-center justify-center h-full">
               <span className="flex items-center gap-1.5 text-sm text-emerald-500">
                 <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
@@ -511,8 +513,8 @@ const HummandLanding = () => {
       </div>
       
       {/* Resultados Municipais - Nova terceira coluna */}
-      <div className="bg-black/30 border border-red-900/20 rounded-lg p-6 shadow-xl">
-        <div className="flex justify-between items-center mb-6">
+      <div className="bg-black/30 border border-red-900/20 rounded-lg p-4 shadow-xl">
+        <div className="flex justify-between items-center mb-4">
           <h3 className="text-xl font-semibold text-white">Resultados Municipais</h3>
           <div className="p-2 bg-red-900/30 rounded-lg">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-red-400">
@@ -523,19 +525,19 @@ const HummandLanding = () => {
         </div>
         
         <div className="grid grid-cols-2 gap-4">
-          <div className="text-center p-4 bg-black/20 rounded-lg border border-red-900/10">
+          <div className="text-center p-3 bg-black/20 rounded-lg border border-red-900/10">
             <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500 mb-1">42%</div>
             <div className="text-sm text-gray-400">Redução Burocracia</div>
           </div>
-          <div className="text-center p-4 bg-black/20 rounded-lg border border-red-900/10">
+          <div className="text-center p-3 bg-black/20 rounded-lg border border-red-900/10">
             <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500 mb-1">3.2x</div>
             <div className="text-sm text-gray-400">Velocidade Processos</div>
           </div>
-          <div className="text-center p-4 bg-black/20 rounded-lg border border-red-900/10">
+          <div className="text-center p-3 bg-black/20 rounded-lg border border-red-900/10">
             <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500 mb-1">18%</div>
             <div className="text-sm text-gray-400">Aumento Arrecadação</div>
           </div>
-          <div className="text-center p-4 bg-black/20 rounded-lg border border-red-900/10">
+          <div className="text-center p-3 bg-black/20 rounded-lg border border-red-900/10">
             <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500 mb-1">67%</div>
             <div className="text-sm text-gray-400">Satisfação Cidadãos</div>
           </div>
@@ -546,9 +548,9 @@ const HummandLanding = () => {
 </section>
 
           {/* Main Dashboard Preview - Seção Atualizada */}
-<section className="py-20 px-4">
+<section className="py-12 px-4">
   <div className="max-w-6xl mx-auto">
-    <div className="text-center mb-12">
+    <div className="text-center mb-8">
       <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">LABDADOS</h2>
       <p className="text-lg text-gray-400 max-w-2xl mx-auto">
         Visualize todos os dados da sua prefeitura em um único lugar com nosso sistema intuitivo e completo.
@@ -556,15 +558,15 @@ const HummandLanding = () => {
     </div>
     
     {/* Large Dashboard Preview */}
-    <div className="bg-black/50 backdrop-blur-sm border border-red-900/20 rounded-xl overflow-hidden shadow-2xl">
-      <div className="flex items-center gap-2 px-4 py-3 border-b border-red-900/20 bg-black/70">
+    <div className="bg-black/50 backdrop-blur-sm border border-red-900/20 rounded-xl overflow-hidden shadow-xl">
+      <div className="flex items-center gap-2 px-4 py-2 border-b border-red-900/20 bg-black/70">
         <div className="w-3 h-3 rounded-full bg-red-500"></div>
         <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
         <div className="w-3 h-3 rounded-full bg-green-500"></div>
         <div className="ml-4 text-xs text-gray-400">LABDADOS Hummand - Módulo Central</div>
       </div>
-      <div className="p-6 font-sans">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+      <div className="p-4 font-sans">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
           <div className="bg-black/30 p-4 rounded-lg border border-red-900/10 card-hover-enhanced stagger-item animate-slide-up">
             <div className="flex justify-between mb-2">
               <div className="text-xs text-gray-400">Projetos Ativos</div>
@@ -605,9 +607,9 @@ const HummandLanding = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-          <div className="md:col-span-2 bg-black/30 p-5 rounded-lg border border-red-900/10 card-hover-enhanced">
-            <div className="flex justify-between items-center mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4">
+          <div className="md:col-span-2 bg-black/30 p-4 rounded-lg border border-red-900/10 card-hover-enhanced">
+            <div className="flex justify-between items-center mb-4">
               <h3 className="text-lg font-semibold text-white">Execução Orçamentária</h3>
               <div className="flex space-x-2">
                 {/* Dropdown de ano atualizado */}
@@ -709,8 +711,8 @@ const HummandLanding = () => {
             </div>
           </div>
           
-          <div className="bg-black/30 p-5 rounded-lg border border-red-900/10 card-hover-enhanced">
-            <h3 className="text-lg font-semibold text-white mb-6">Projetos por Secretaria</h3>
+          <div className="bg-black/30 p-4 rounded-lg border border-red-900/10 card-hover-enhanced">
+            <h3 className="text-lg font-semibold text-white mb-4">Projetos por Secretaria</h3>
             
             {/* Pie Chart Simulation */}
             <div className="flex justify-center mb-4">
@@ -747,8 +749,8 @@ const HummandLanding = () => {
           </div>
         </div>
         
-        <div className="bg-black/30 p-5 rounded-lg border border-red-900/10 card-hover-enhanced">
-          <div className="flex justify-between items-center mb-6">
+        <div className="bg-black/30 p-4 rounded-lg border border-red-900/10 card-hover-enhanced">
+          <div className="flex justify-between items-center mb-4">
             <h3 className="text-lg font-semibold text-white">Projetos Recentes</h3>
             {/* Botão "Ver Todos" atualizado */}
             <button className="text-xs text-red-400 hover:text-red-300 flex items-center gap-1 transition-colors" disabled>
@@ -829,12 +831,12 @@ const HummandLanding = () => {
 </section>
 
           {/* Call to Action */}
-<section className="py-16 px-4 bg-black/40 backdrop-blur-sm border-t border-red-900/20">
+<section className="py-12 px-4 bg-black/40 backdrop-blur-sm border-t border-red-900/20">
   <div className="max-w-4xl mx-auto text-center">
-    <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
       Pronto para modernizar sua gestão pública?
     </h2>
-    <p className="text-xl text-gray-300 mb-8">
+    <p className="text-xl text-gray-300 mb-6">
       Agende uma conversa com nossa equipe e descubra como podemos ajudar sua prefeitura.
     </p>
     <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -858,9 +860,9 @@ const HummandLanding = () => {
 </section>
 
           {/* Footer */}
-<footer className="py-8 px-4 bg-black border-t border-red-900/20">
+<footer className="py-6 px-4 bg-black border-t border-red-900/20">
   <div className="max-w-6xl mx-auto">
-    <div className="flex flex-col md:flex-row justify-between items-center text-sm mb-4">
+    <div className="flex flex-col md:flex-row justify-between items-center text-sm mb-3">
       <div className="text-gray-500">© 2025 Hummand.</div>
       
       <div className="flex gap-8 my-4 md:my-0">
@@ -932,6 +934,8 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<HummandLanding />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/system" element={<EasterEgg />} />
       </Routes>

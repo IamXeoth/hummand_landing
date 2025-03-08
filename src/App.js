@@ -236,7 +236,7 @@ const HummandLanding = () => {
   <div className="max-w-6xl mx-auto">
     <div className="flex flex-col lg:flex-row gap-8 items-start">
       {/* Left Side - Slogan */}
-      <div className="lg:w-1/2 lg:pt-16"> {/* Aumentei padding-top */}
+      <div className="lg:w-1/2 lg:pt-0"> {/* Aumentei padding-top */}
         <div className="inline-block px-3 py-1 mb-6 bg-red-900/20 border border-red-500/20 rounded-full text-red-400 text-sm">
           <span className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 bg-red-500 rounded-full"></span>

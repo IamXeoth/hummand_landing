@@ -260,7 +260,7 @@ const AboutUs = () => {
                   </div>
                   
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
-                    Transformando <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500">prefeituras</span> através da tecnologia
+                    Transformando o <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500">setor público</span> através da tecnologia
                   </h1>
                   
                   <p className="text-lg text-gray-400 mb-4">
@@ -603,10 +603,10 @@ const AboutUs = () => {
           <section className="py-12 px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Vamos transformar sua prefeitura?
+                Vamos transformar sua instituição pública?
               </h2>
               <p className="text-xl text-gray-300 mb-6">
-                Estamos prontos para ajudar sua administração municipal a entrar na era digital com soluções 
+                Estamos prontos para ajudar sua administração a entrar na era digital com soluções 
                 personalizadas e acessíveis.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

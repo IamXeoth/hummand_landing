@@ -248,7 +248,7 @@ const HummandLanding = () => {
         </div>
         
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
-          Humanizando a <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500">transformação digital</span> da sua prefeitura
+          Humanizando a <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500">transformação digital</span> no setor público
         </h1>
         
         <p className="text-lg text-gray-400 mb-6 max-w-lg">
@@ -311,7 +311,7 @@ const HummandLanding = () => {
                     <span className="text-xs bg-red-900/20 px-2 py-1 rounded text-red-400">27 ativos</span>
                   </div>
                   <div className="text-xs text-gray-400 mt-1">
-                    Consultoria exclusiva para cada secretaria municipal
+                    Consultoria exclusiva para cada secretaria, setor ou órgão público.
                   </div>
                 </div>
               </div>
@@ -368,7 +368,7 @@ const HummandLanding = () => {
           </div>
           
           <div className="text-xs text-gray-400 p-2 bg-black/20 rounded border border-gray-800/50">
-            <strong className="text-white">Suporte técnico e de gestão</strong>: desde manutenção de hardware e sistemas até direcionamentos estratégicos para prefeituras parceiras.
+            <strong className="text-white">Suporte técnico e de gestão</strong>: da manutenção de hardware e sistemas aos direcionamentos estratégicos para órgãos e entidades do setor público.
           </div>
         </div>
       </div>
@@ -428,7 +428,7 @@ const HummandLanding = () => {
             <div className="p-3 border border-red-900/10 rounded-lg bg-black/30">
               <div className="flex items-center text-xs text-gray-400">
                 <span className="text-emerald-500 mr-2">●</span>
-                Sistema ativamente analisando padrões de dados municipais
+                Sistema ativamente analisando padrões de dados municipais.
               </div>
             </div>
           </div>
@@ -554,7 +554,7 @@ const HummandLanding = () => {
     <div className="text-center mb-8">
       <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">LABDADOS</h2>
       <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-        Visualize todos os dados da sua prefeitura em um único lugar com nosso sistema intuitivo e completo.
+        Visualize todos os dados da sua instituição pública em um único lugar com nosso sistema intuitivo e completo.
       </p>
     </div>
     
@@ -838,7 +838,7 @@ const HummandLanding = () => {
       Pronto para modernizar sua gestão pública?
     </h2>
     <p className="text-xl text-gray-300 mb-6">
-      Agende uma conversa com nossa equipe e descubra como podemos ajudar sua prefeitura.
+      Agende uma conversa com nossa equipe e descubra como podemos ajudar sua instituição pública.
     </p>
     <div className="flex flex-col sm:flex-row gap-4 justify-center">
       <Link 

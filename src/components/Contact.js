@@ -317,7 +317,7 @@ const Contact = () => {
               <div className="text-center mb-8">
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 scale-in">Entre em Contato</h1>
                 <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                  Interessado em nossas soluções para transformação digital da sua prefeitura? 
+                  Interessado em nossas soluções para transformação digital da sua instituição pública?
                   Entre em contato com nossa equipe especializada.
                 </p>
               </div>

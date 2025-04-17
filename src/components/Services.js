@@ -468,12 +468,12 @@ const Services = () => {
                 </div>
                 
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                  Soluções <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500">completas</span> para sua prefeitura
+                  Soluções <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500">completas</span> para sua instituição pública
                 </h1>
                 
                 <p className="text-lg text-gray-400 max-w-3xl mx-auto mb-8">
                   Da infraestrutura à inteligência artificial, oferecemos todas as ferramentas necessárias 
-                  para modernizar sua administração municipal e melhorar o atendimento ao cidadão.
+                  para modernizar sua administração e melhorar o atendimento ao cidadão.
                 </p>
                 
                 {/* Botão de contato direto abaixo do texto principal */}
@@ -795,10 +795,10 @@ const Services = () => {
           <section className="py-12 px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Pronto para transformar sua prefeitura?
+                Pronto para transformar sua instituição pública?
               </h2>
               <p className="text-xl text-gray-300 mb-6">
-                Agende uma consultoria gratuita e descubra como nossas soluções podem modernizar sua administração municipal.
+                Agende uma consultoria gratuita e descubra como nossas soluções podem modernizar sua administração.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link 

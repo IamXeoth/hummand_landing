@@ -1,25 +1,168 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "Hummand - Transformação Digital para o Setor Público",
+  "short_name": "Hummand",
+  "description": "Consultoria especializada em transformação digital para prefeituras: TI, IA, análise de dados e sistemas municipais. Modernize sua gestão pública.",
+  "start_url": "https://www.hummand.com.br/",
+  "scope": "https://www.hummand.com.br/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#ef4444",
+  "background_color": "#0a0a0e",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "categories": [
+    "business",
+    "productivity",
+    "government",
+    "technology"
+  ],
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "favicon-hummand.jpg",
+      "sizes": "64x64",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "logo192.png",
+      "sizes": "192x192",
       "type": "image/png",
-      "sizes": "192x192"
+      "purpose": "any maskable"
     },
     {
       "src": "logo512.png",
+      "sizes": "512x512", 
       "type": "image/png",
-      "sizes": "512x512"
+      "purpose": "any maskable"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "screenshots": [
+    {
+      "src": "images/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Dashboard principal da Hummand - versão desktop"
+    },
+    {
+      "src": "images/screenshot-mobile.png", 
+      "sizes": "375x812",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Interface móvel da Hummand"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Contato",
+      "short_name": "Contato",
+      "description": "Entre em contato com nossa equipe",
+      "url": "/contact",
+      "icons": [
+        {
+          "src": "images/icon-contact.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Serviços",
+      "short_name": "Serviços", 
+      "description": "Conheça nossos serviços de transformação digital",
+      "url": "/services",
+      "icons": [
+        {
+          "src": "images/icon-services.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Sobre Nós",
+      "short_name": "Sobre",
+      "description": "Conheça a história e missão da Hummand",
+      "url": "/about",
+      "icons": [
+        {
+          "src": "images/icon-about.png",
+          "sizes": "96x96", 
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Sistema",
+      "short_name": "Sistema",
+      "description": "Acesse o sistema administrativo",
+      "url": "/system",
+      "icons": [
+        {
+          "src": "images/icon-system.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://www.hummand.com.br/manifest.json"
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "protocol_handlers": [
+    {
+      "protocol": "mailto",
+      "url": "/contact?email=%s"
+    }
+  ],
+  "share_target": {
+    "action": "/contact",
+    "method": "GET",
+    "params": {
+      "title": "subject",
+      "text": "message",
+      "url": "url"
+    }
+  },
+  "file_handlers": [
+    {
+      "action": "/upload",
+      "accept": {
+        "application/pdf": [".pdf"],
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": [".xlsx"],
+        "application/vnd.ms-excel": [".xls"],
+        "text/csv": [".csv"]
+      }
+    }
+  ],
+  "handle_links": "preferred",
+  "capture_links": "existing-client-navigate"
 }

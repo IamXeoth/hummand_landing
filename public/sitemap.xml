@@ -1,15 +1,288 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                           http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
+  <!-- Página Principal -->
   <url>
     <loc>https://www.hummand.com.br/</loc>
-    <lastmod>2025-01-24T06:58:06+00:00</lastmod>
-    <changefreq>daily</changefreq>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.hummand.com.br/images/hummand-hero-image.jpg</image:loc>
+      <image:title>Hummand - Transformação Digital para o Setor Público</image:title>
+      <image:caption>Dashboard de gestão municipal desenvolvido pela Hummand para modernizar prefeituras</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Sobre Nós -->
+  <url>
+    <loc>https://www.hummand.com.br/about</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.hummand.com.br/images/about-hummand-team.jpg</image:loc>
+      <image:title>Equipe Hummand - Especialistas em Transformação Digital</image:title>
+      <image:caption>Conheça a equipe especializada da Hummand em tecnologia para o setor público</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Serviços -->
+  <url>
+    <loc>https://www.hummand.com.br/services</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.hummand.com.br/images/services-overview.jpg</image:loc>
+      <image:title>Serviços de TI para Prefeituras - Hummand</image:title>
+      <image:caption>Soluções completas em TI, IA, análise de dados e consultoria para administração pública</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Contato -->
+  <url>
+    <loc>https://www.hummand.com.br/contact</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.hummand.com.br/images/contact-hummand.jpg</image:loc>
+      <image:title>Entre em Contato - Hummand</image:title>
+      <image:caption>Formulário de contato para consultoria em transformação digital para prefeituras</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Sistema (Easter Egg) -->
+  <url>
+    <loc>https://www.hummand.com.br/system</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Páginas de Serviços Específicos -->
+  <url>
+    <loc>https://www.hummand.com.br/services/consultoria-transformacao-digital</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hummand.com.br/services/sistemas-municipais</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hummand.com.br/services/inteligencia-artificial</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hummand.com.br/services/analise-dados</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hummand.com.br/services/infraestrutura-ti</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hummand.com.br/services/ciberseguranca</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hummand.com.br/services/suporte-24-7</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Páginas de Soluções por Setor -->
+  <url>
+    <loc>https://www.hummand.com.br/solucoes/prefeituras-pequeno-porte</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hummand.com.br/solucoes/prefeituras-medio-porte</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hummand.com.br/solucoes/secretarias-municipais</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Páginas de Recursos e Conteúdo -->
+  <url>
+    <loc>https://www.hummand.com.br/recursos/cases-sucesso</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hummand.com.br/recursos/whitepapers</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hummand.com.br/recursos/guias</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Blog/Artigos (se existir) -->
+  <url>
+    <loc>https://www.hummand.com.br/blog</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hummand.com.br/blog/transformacao-digital-prefeituras</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hummand.com.br/blog/inteligencia-artificial-gestao-publica</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hummand.com.br/blog/modernizacao-sistemas-municipais</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Páginas Institucionais -->
+  <url>
+    <loc>https://www.hummand.com.br/carreira</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hummand.com.br/parceiros</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hummand.com.br/imprensa</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Páginas Legais -->
+  <url>
+    <loc>https://www.hummand.com.br/politica-privacidade</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hummand.com.br/termos-uso</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hummand.com.br/lgpd</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Landing Pages Específicas -->
+  <url>
+    <loc>https://www.hummand.com.br/demo-labdados</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hummand.com.br/consultoria-gratuita</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hummand.com.br/ebook-transformacao-digital</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Páginas de Localização/Regional -->
+  <url>
+    <loc>https://www.hummand.com.br/paraiba</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hummand.com.br/nordeste</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- FAQ e Suporte -->
+  <url>
+    <loc>https://www.hummand.com.br/faq</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hummand.com.br/suporte</loc>
+    <lastmod>2025-07-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
 
 </urlset>

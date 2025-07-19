@@ -1,43 +1,316 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon-hummand.jpg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Hummand - Humanizando seus serviços de TI. Consultoria, suporte e gestão com foco em dados e inovação."
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Hummand | Humanizando seus serviços de TI</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+<html lang="pt-BR">
+<head>
+  <!-- Meta Tags Básicas -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="theme-color" content="#ef4444" />
+  
+  <!-- SEO Meta Tags -->
+  <title>Hummand - Transformação Digital para o Setor Público | Consultoria TI Prefeituras</title>
+  <meta name="description" content="Hummand oferece soluções completas de transformação digital para prefeituras: consultoria TI, sistemas municipais, IA, segurança e análise de dados. Modernize sua gestão pública." />
+  <meta name="keywords" content="transformação digital, setor público, consultoria TI prefeituras, sistemas municipais, inteligência artificial administração pública, modernização prefeituras, gestão municipal digital, Paraíba, Curral de Cima" />
+  <meta name="author" content="Hummand" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.hummand.com.br/" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.hummand.com.br/" />
+  <meta property="og:title" content="Hummand - Transformação Digital para o Setor Público" />
+  <meta property="og:description" content="Soluções completas de TI para modernizar prefeituras: consultoria, sistemas municipais, IA e análise de dados. Humanizando a transformação digital do setor público." />
+  <meta property="og:image" content="https://www.hummand.com.br/images/hummand-og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Hummand" />
+  <meta property="og:locale" content="pt_BR" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://www.hummand.com.br/" />
+  <meta name="twitter:title" content="Hummand - Transformação Digital para o Setor Público" />
+  <meta name="twitter:description" content="Soluções completas de TI para modernizar prefeituras: consultoria, sistemas municipais, IA e análise de dados." />
+  <meta name="twitter:image" content="https://www.hummand.com.br/images/hummand-og-image.jpg" />
+  <meta name="twitter:creator" content="@IamXeoth" />
+  <meta name="twitter:site" content="@hummand_lab" />
+  
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon-hummand.jpg" />
+  <link rel="apple-touch-icon" href="/logo192.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/logo192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/logo512.png" />
+  
+  <!-- Manifest -->
+  <link rel="manifest" href="/manifest.json" />
+  
+  <!-- Preconnect para Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <!-- DNS Prefetch -->
+  <link rel="dns-prefetch" href="//www.google-analytics.com" />
+  <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+  
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Hummand",
+    "legalName": "Hummand Tecnologia da Informação",
+    "url": "https://www.hummand.com.br",
+    "logo": "https://www.hummand.com.br/logo512.png",
+    "description": "Empresa especializada em transformação digital para o setor público, oferecendo consultoria TI, sistemas municipais, inteligência artificial e análise de dados para prefeituras.",
+    "foundingDate": "2024",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+55-11-3456-7890",
+      "contactType": "customer service",
+      "email": "contato@hummand.com.br",
+      "availableLanguage": ["Portuguese"]
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "R. Josefa Eugenia, S/N - Centro",
+      "addressLocality": "Curral de Cima",
+      "addressRegion": "PB",
+      "postalCode": "58291-000",
+      "addressCountry": "BR"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Brazil"
+    },
+    "sameAs": [
+      "https://www.instagram.com/hummand.lab",
+      "https://www.linkedin.com/company/hummand",
+      "https://x.com/IamXeoth"
+    ],
+    "serviceType": [
+      "Transformação Digital",
+      "Consultoria em TI",
+      "Sistemas Municipais",
+      "Inteligência Artificial",
+      "Análise de Dados",
+      "Cibersegurança",
+      "Infraestrutura TI"
+    ],
+    "industry": "Technology Consulting",
+    "knowsAbout": [
+      "Transformação Digital",
+      "Setor Público",
+      "Administração Municipal",
+      "Inteligência Artificial",
+      "Business Intelligence",
+      "Gestão Pública",
+      "Inovação Governamental"
+    ]
+  }
+  </script>
+  
+  <!-- Local Business Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Hummand",
+    "image": "https://www.hummand.com.br/logo512.png",
+    "description": "Consultoria especializada em transformação digital para prefeituras e órgãos públicos. Oferecemos soluções completas em TI, IA, análise de dados e modernização de sistemas municipais.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "R. Josefa Eugenia, S/N - Centro",
+      "addressLocality": "Curral de Cima",
+      "addressRegion": "PB",
+      "postalCode": "58291-000",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -7.0123,
+      "longitude": -36.9876
+    },
+    "url": "https://www.hummand.com.br",
+    "telephone": "+55-11-3456-7890",
+    "email": "contato@hummand.com.br",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday", 
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "serviceArea": {
+      "@type": "Country",
+      "name": "Brazil"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Serviços de Transformação Digital",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Consultoria em Transformação Digital",
+            "description": "Consultoria especializada para modernização de prefeituras e órgãos públicos"
+          }
+        },
+        {
+          "@type": "Offer", 
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Sistemas Municipais",
+            "description": "Desenvolvimento e implementação de sistemas para gestão municipal"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service", 
+            "name": "Inteligência Artificial",
+            "description": "Soluções de IA para otimização de processos públicos e análise preditiva"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+  
+  <!-- Website Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Hummand",
+    "url": "https://www.hummand.com.br",
+    "description": "Transformação digital para o setor público - Consultoria TI, sistemas municipais e soluções de inteligência artificial para prefeituras",
+    "inLanguage": "pt-BR",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.hummand.com.br/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Hummand",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.hummand.com.br/logo512.png"
+      }
+    }
+  }
+  </script>
+  
+  <!-- Performance Optimization -->
+  <link rel="preload" href="/static/css/main.css" as="style" />
+  <link rel="preload" href="/static/js/main.js" as="script" />
+  
+  <!-- Google Analytics 4 (Opcional - substitua pelo seu ID) -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+  -->
+  
+  <!-- Microsoft Clarity (Opcional) -->
+  <!--
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
+  </script>
+  -->
+</head>
+<body>
+  <noscript>
+    <div style="padding: 20px; background: #f8f9fa; border: 1px solid #dee2e6; margin: 20px; border-radius: 5px;">
+      <h2>JavaScript Necessário</h2>
+      <p>Para ter a melhor experiência em nosso site, você precisa habilitar o JavaScript em seu navegador.</p>
+      <p>A Hummand oferece soluções de transformação digital para prefeituras e órgãos públicos.</p>
+      <p>Entre em contato: <a href="mailto:contato@hummand.com.br">contato@hummand.com.br</a> | <a href="tel:+551134567890">(11) 3456-7890</a></p>
+    </div>
+  </noscript>
+  
+  <!-- Skip Navigation Link para Acessibilidade -->
+  <a href="#main-content" class="skip-link" style="
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #ef4444;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+    border-radius: 4px;
+  ">Pular para o conteúdo principal</a>
+  
+  <!-- React App Container -->
+  <div id="root"></div>
+  
+  <!-- Main Content Landmark -->
+  <main id="main-content" style="display: none;">
+    <!-- Conteúdo será carregado pelo React -->
+  </main>
+  
+  <!-- Fallback para quando JavaScript não carrega -->
+  <noscript>
+    <main style="padding: 40px 20px; max-width: 1200px; margin: 0 auto; font-family: Arial, sans-serif;">
+      <header style="text-align: center; margin-bottom: 40px;">
+        <h1 style="color: #ef4444; font-size: 2.5rem; margin-bottom: 10px;">Hummand</h1>
+        <p style="font-size: 1.2rem; color: #666;">Transformação Digital para o Setor Público</p>
+      </header>
+      
+      <section style="margin-bottom: 40px;">
+        <h2 style="color: #333; margin-bottom: 20px;">Sobre a Hummand</h2>
+        <p style="line-height: 1.6; margin-bottom: 15px;">
+          A Hummand é uma empresa especializada em transformação digital para o setor público, 
+          com foco em prefeituras de pequeno e médio porte.
+        </p>
+        <p style="line-height: 1.6;">
+          Oferecemos soluções completas em TI, inteligência artificial, análise de dados, 
+          cibersegurança e consultoria estratégica para modernizar a gestão pública.
+        </p>
+      </section>
+      
+      <section style="margin-bottom: 40px;">
+        <h2 style="color: #333; margin-bottom: 20px;">Nossos Serviços</h2>
+        <ul style="line-height: 1.8;">
+          <li>Consultoria em Transformação Digital</li>
+          <li>Sistemas Municipais</li>
+          <li>Inteligência Artificial para Administração Pública</li>
+          <li>Análise de Dados e Business Intelligence</li>
+          <li>Infraestrutura de TI</li>
+          <li>Cibersegurança e Proteção de Dados</li>
+          <li>Suporte Técnico 24/7</li>
+        </ul>
+      </section>
+      
+      <section>
+        <h2 style="color: #333; margin-bottom: 20px;">Entre em Contato</h2>
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px;">
+          <p><strong>E-mail:</strong> <a href="mailto:contato@hummand.com.br">contato@hummand.com.br</a></p>
+          <p><strong>Telefone:</strong> <a href="tel:+551134567890">(11) 3456-7890</a></p>
+          <p><strong>Endereço:</strong> R. Josefa Eugenia, S/N - Centro, Curral de Cima - PB, 58291-000</p>
+        </div>
+      </section>
+    </main>
+  </noscript>
+</body>
 </html>
